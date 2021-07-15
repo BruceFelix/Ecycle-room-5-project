@@ -22,6 +22,10 @@ You are expected to use a combination of PHP, MySQL and JavaScript to create thi
 Create a landing page for the E-Cycle website which includes the following elements:
 • Compelling headline
 • Eye-catching images
+
+### shop page design
+![eCycle](https://user-images.githubusercontent.com/44478872/125853402-594f32ae-83c9-4bd0-a726-d13f8ced32a9.png)
+
 • Testimonials from satisfied customers
 • At least two call to action buttons (sign-up and shop)
 • An offer of 15% off first order as a pop up for signing up when the customer hovers over the sign-up action button
