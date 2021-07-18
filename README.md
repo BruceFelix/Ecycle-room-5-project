@@ -53,6 +53,9 @@ Submission requirements
 • For each task, you should present the necessary code and screen dumps in a word-processed document.
 • All references and citations must use the Harvard Style.
 
-### shop page design
+### shop page design 1.0
 ![eCycle](https://user-images.githubusercontent.com/44478872/125853402-594f32ae-83c9-4bd0-a726-d13f8ced32a9.png)
+### shop page design 1.1
+![eCycle 1 2](https://user-images.githubusercontent.com/44478872/126062838-f23c5baa-694a-4606-82a1-1a01d6c61ade.png)
+
 
