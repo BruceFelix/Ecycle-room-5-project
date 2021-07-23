@@ -31,6 +31,7 @@ nav{
     z-index: 10;
 }
 
+
 .logo{
     width: 100px;
     height: 45px;
@@ -77,12 +78,17 @@ nav{
     margin-left: 4px;
 }
 .filter{
+    cursor: pointer;
     flex-grow: 0;
+    max-width: 60px;
 }
 .links a{
     text-decoration: none;
     color: black;
     margin: 4px;
+}
+.links a:hover, .filter:hover{
+    color: white;
 }
 .sign-up-btn{
     color: #06c00d! important;
@@ -91,7 +97,16 @@ nav{
     padding: 4px 8px;
 
 }
-
+.dark-overlay{
+    background: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    position: absolute;
+    display: none;
+}
 
 
 /* slider details */
@@ -102,9 +117,10 @@ nav{
     justify-content: center;
     width: 100%;
     min-height: 60vh;
+    background: linear-gradient(79.2deg,transparent,#8fea93);
+    margin-top: 50px;
 }
-.first-slide{
-    background: linear-gradient(79.2deg,transparent,#8fea93);}
+
 .slide-bike{
     width: 300px;
     height: auto;
@@ -136,7 +152,7 @@ nav{
   }
   .products-container h1{
     text-align: center;
-    margin-top: 2rem;
+    margin: 1rem 0;
   }
 .products{
     display: flex;
@@ -159,7 +175,11 @@ nav{
     padding: 5px;
     border: 1px solid rgba(0, 0, 0, 0.247) ;
     border-radius: 4px;
-    min-height: 250px;
+    padding: 15px 10px;
+    margin: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .buy{
     background-color: #3D78CF;
@@ -172,8 +192,12 @@ nav{
 .wish{
     color: green;
 }
+.icon-small{
+    width: 24px;
+    height: 24px;
+}
 footer{
-    background-image: url(/Ecycle-room-5-project/icons/wave\ darkBlue\ svg\ 1.svg);
+    background-image: url(../icons/wave\ darkBlue\ svg\ 1.svg);
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
@@ -183,9 +207,54 @@ footer{
     justify-content: space-around;
     color: wheat;
     margin-top: 50px;
+    flex-wrap: wrap;
+    padding: 2rem 0.3rem;
+    padding-top: 3.5rem;
+    background-position: center;
+}
+footer div{
+    margin: 10px;
 }
 .footer-links h2,.footer-partners h2,.footer-social-media h2, .vision h2{
     border-bottom: 1px solid rgb(255, 255, 255);
-    padding: 5px 0;
+    margin: 5px 0;
+    margin-top: 1rem;
     width: max-content;
 }
+.menu-bar{
+    display: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+@media screen and (max-width:700px){
+    #search{
+        width: 100%;
+    }
+    .search-bar{
+        display: none;
+    }
+    .links{
+        display: none;
+    }
+    .menu-bar{
+        display: flex;
+    }
+}
+
+
+
+.show-flex{
+    display: flex;
+    margin: 15px 5px;
+}
+.show-links{
+    display: grid;
+    justify-items: center;
+    align-content: space-around;
+    width: 100%;
+    min-height: 150px;
+}
+
+
+
+
