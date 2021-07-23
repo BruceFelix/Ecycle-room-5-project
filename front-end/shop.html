@@ -162,6 +162,11 @@
                 let swiper = new Swiper('.swiper-container', {
                 // slidesPerView: 'auto',
                 spaceBetween:30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false
+                },
                 freeMode: false,
                   // Navigation arrows
                 navigation: {
@@ -183,7 +188,14 @@
                 menuBtn.addEventListener("click",()=>{
                     searchBar.classList.toggle("show-flex");
                     links.classList.toggle("show-links");
-                    overlay.classList.toggle("show-flex");
+                    overlay.classList.toggle("show-overlay");
+                })
+
+                overlay.addEventListener("click",()=>{
+                    searchBar.classList.toggle("show-flex");
+                    links.classList.toggle("show-links");
+                    overlay.classList.toggle("show-overlay");
+
                 })
             </script>
 
