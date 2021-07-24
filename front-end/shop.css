@@ -15,6 +15,7 @@ body{
 }
 li{
     list-style: none;
+    margin: 5px 0;
 }
 a{
     text-decoration: none;
@@ -62,6 +63,7 @@ nav{
     width: 30px;
     height: 30px;
     padding: 4px;
+    margin: 5px;
 }
 .flex-class{
     display: flex;
@@ -272,7 +274,9 @@ footer div{
     -moz-animation: moveDown .4s .3s ease-in forwards;
 
 }
-
+footer li a:hover {
+    color: black;
+}
 @keyframes moveDown {
     100%{
         transform: none;
