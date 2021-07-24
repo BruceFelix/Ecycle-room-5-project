@@ -21,19 +21,53 @@
 <body>
     <nav>
         <img src="../icons/logos/logo.PNG" alt="logo" class="logo">
+
+        <p class="menu-bar flex-p"> <img src="../icons/menu-svgrepo-com.svg" class="icon">Menu</p>
+
+
         <div class="search-bar">
             <input type="text" name="search" id="search" placeholder="search bicycle..">
             <img src="../icons/search.svg" alt="search" class="icon">
         </div>
+
+
+
         <div class="flex-class links">
             <a href="#">Home</a>
-            <p class="flex-class filter">Filter <img src="../icons/arrow.svg" alt="down" class="arrow-down"></p>
+            <p class="flex-class filter">Filter <img src="../icons/arrow.svg" alt="down" class="arrow-down">
+                <form action="#" class="form-filter">
+                    <h3 style="justify-self: left;" >Condition</h3>
+
+                    <div class="radio-buttons">
+                        <input type="radio" name="new" id="old"> New
+                        <input type="radio" name="old" id="old"> Old
+                    </div>
+
+
+                    <select name="types" id="type">
+                        <option value="defualt">Types</option>
+                        <option value="City Cycle">City Cycle</option>
+                        <option value="Road Bike">Road bike</option>
+                        <option value="Electric Assisted Cycle">Electric Assisted Cycle</option>
+                        <option value="Cross bike">Cross bike</option>
+                        <option value="Mountain bike">Mountain Bike</option>
+                        <option value="Mini Velo">Mini Velo</option>
+                    </select>
+                    <h3 style="justify-self: left;" >Price</h3>
+                    <div class="prices flex-class">
+                        <input type="text" placeholder="min"> -
+                        <input type="text" placeholder="max">
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
             <a href="login.html">Log in</a>
             <a href="signup.html" class="sign-up-btn">Sign up</a>
         </div>
     </nav>
 
 
+    <div class="dark-overlay"></div>
     <!-- swiperjs effect  -->
     <section class="swiper-container welcome-slider">
         <div class="swiper-wrapper">
@@ -76,6 +110,9 @@
                 </div>
          </div>
 
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-button-next"></div>
+
           <!-- Add Pagination -->
           <div class="swiper-pagination swiper-pagination-2"></div>
 
@@ -84,19 +121,40 @@
     </section>
     <section class="products-container">
         <h1>Our Products</h1>
-        <div class="products">
+        <div class="products flex-class">
             <div class="prod-card">
-                <img class="product-img" src="/Ecycle-room-5-project/images/ebike2-removebg-preview.png" alt="">
+                <img class="product-img" src="../images/ebike2-removebg-preview.png" alt="">
                 <p class="prod-title" >Grande Electric bike</p>
-                <p class="flex-p" > <img class="icon" src="/Ecycle-room-5-project/icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
-                <p class="flex-p" > <img class="icon" src="/Ecycle-room-5-project/icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
+                <p class="flex-p" > <img class="icon" src="../icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
+                <p class="flex-p" > <img class="icon" src="../icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
                <div class="buy-btns flex-class">
                 <button class="buy">Buy now</button>
-                <button class="flex-p wish" > <img class="icon" src="/Ecycle-room-5-project/icons/like-svgrepo-com.svg" alt=""> Added to wishlist</button>
+                <button class="flex-p wish" > <img class="icon icon-small" src="../icons/like-svgrepo-com.svg" alt=""> Add to wishlist</button>
                </div>
             </div>
-            <div class="product2"></div>
-            <div class="product3"></div>
+
+            <div class="prod-card">
+                <img class="product-img" src="../images/ebike2-removebg-preview.png" alt="">
+                <p class="prod-title" >Grande Electric bike</p>
+                <p class="flex-p" > <img class="icon" src="../icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
+                <p class="flex-p" > <img class="icon" src="../icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
+               <div class="buy-btns flex-class">
+                <button class="buy">Buy now</button>
+                <button class="flex-p wish" > <img class="icon icon-small" src="../icons/like-svgrepo-com.svg" alt=""> Add to wishlist</button>
+               </div>
+            </div>
+
+            <div class="prod-card">
+                <img class="product-img" src="../images/ebike2-removebg-preview.png" alt="">
+                <p class="prod-title" >Grande Electric bike</p>
+                <p class="flex-p" > <img class="icon" src="../icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
+                <p class="flex-p" > <img class="icon" src="../icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
+               <div class="buy-btns flex-class">
+                <button class="buy">Buy now</button>
+                <button class="flex-p wish" > <img class="icon icon-small" src="../icons/like-svgrepo-com.svg" alt=""> Add to wishlist</button>
+               </div>
+            </div>
+
         </div>
     </section>
     <footer class="foot">
@@ -110,22 +168,22 @@
                 <h2>Useful links</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Log in</a></li>
+                    <li><a href="/front-end/login.html">Log in</a></li>
                     <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Search</a></li>
+                    <li><a href="#search">Search</a></li>
                 </ul>
             </div>
             <div class="footer-partners">
                 <h2>Our Partners</h2>
-                <img src="/Ecycle-room-5-project/icons/tlc-logo 1.svg" alt="">
-                <img src="/Ecycle-room-5-project/icons/cycle_logo-removebg-preview 1.svg" alt="">
+                <img src="../icons/tlc-logo 1.svg" alt="">
+                <img src="../icons/cycle_logo-removebg-preview 1.svg" alt="">
             </div>
             <div class="footer-social-media">
                 <h2>Follow us on:</h2>
                 <ul>
-                    <li><a href="#"> <img class="icon" src="/Ecycle-room-5-project/icons/facebook-svgrepo-com.svg" alt=""> @eCycle_Kenya</a></li>
-                    <li><a href="#"> <img class="icon" src="/Ecycle-room-5-project/icons/twitter-svgrepo-com.svg" alt=""> eCycle_Kenya</a></li>
-                    <li><a href="#"> <img class="icon" src="/Ecycle-room-5-project/icons/youtube-svgrepo-com.svg" alt=""> eCcyle Kenya </a></li>
+                    <li><a href="#" class="flex-p"> <img class="icon" src="../icons/facebook-svgrepo-com.svg" alt=""> @eCycle_Kenya</a></li>
+                    <li><a href="#" class="flex-p"> <img class="icon" src="../icons/twitter-svgrepo-com.svg" alt=""> eCycle_Kenya</a></li>
+                    <li><a href="#" class="flex-p"> <img class="icon" src="../icons/youtube-svgrepo-com.svg" alt=""> eCcyle Kenya </a></li>
                 </ul>
             </div>
     </footer>
@@ -135,21 +193,49 @@
             <!-- Initialize Swiper -->
             <script>
                 let swiper = new Swiper('.swiper-container', {
-                slidesPerView: 'auto',
-                // spaceBetween: 20,
-                centeredSlides: true,
-
-                // Navigation arrows
-                navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
+                // slidesPerView: 'auto',
+                spaceBetween:30,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false
                 },
                 freeMode: false,
+                  // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
                 });
+
+                //menu dropdown
+                let menuBtn = document.querySelector(".menu-bar");
+                let searchBar = document.querySelector(".search-bar");
+                let links = document.querySelector(".links");
+                let overlay = document.querySelector(".dark-overlay");
+
+                menuBtn.addEventListener("click",()=>{
+                    searchBar.classList.toggle("show-flex");
+                    links.classList.toggle("show-links");
+                    overlay.classList.toggle("show-overlay");
+                })
+
+                overlay.addEventListener("click",()=>{
+                    searchBar.classList.toggle("show-flex");
+                    links.classList.toggle("show-links");
+                    overlay.classList.toggle("show-overlay");
+
+                })
+                let filter_icon = document.querySelector(".filter")
+                let form_filter = document.querySelector(".form-filter")
+
+                filter_icon.addEventListener("click",function(){
+                    form_filter.classList.toggle("show-grid")
+                })
             </script>
 
 </body>
