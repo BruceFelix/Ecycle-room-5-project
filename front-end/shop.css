@@ -34,7 +34,9 @@ nav{
     width: 100%;
     z-index: 10;
 }
-
+#filter{
+    width: 40%;
+}
 
 .logo{
     width: 100px;
@@ -71,6 +73,7 @@ nav{
     justify-content: space-around;
     flex-wrap: wrap;
     flex-grow: 0.4;
+    position: relative;
 }
 .flex-p{
     display: flex;
@@ -246,8 +249,51 @@ footer div{
     }
 }
 
-
-
+footer li a:hover {
+    color: black;
+}
+@keyframes moveDown {
+    100%{
+        transform: none;
+        opacity: 1;
+    }
+}
+@-moz-keyframes moveDown {
+    100%{
+        transform: none;
+        opacity: 1;
+    }
+}
+.form-filter{
+    position: absolute;
+    top: 45px;
+    backdrop-filter: blur(4px);
+    background:#3de74391;
+    width: 300px;
+    display: none;
+}
+.radio-buttons{
+    justify-self: left;
+    margin: 5px;
+}
+select{
+    border-radius: 6px;
+    width: 250px;
+    height: 40px;
+}
+select:focus{
+    border: none;
+}
+input[type="text"]{
+ width: 120px;
+ border: none;
+}
+input[type="text"]:focus{
+    border: none;
+}
+input[type= "submit"]{
+    justify-self: center;
+}
 .show-flex{
     display: flex;
     margin: 15px 5px;
@@ -274,21 +320,6 @@ footer div{
     -moz-animation: moveDown .4s .3s ease-in forwards;
 
 }
-footer li a:hover {
-    color: black;
+.show-grid{
+    display: grid;
 }
-@keyframes moveDown {
-    100%{
-        transform: none;
-        opacity: 1;
-    }
-}
-@-moz-keyframes moveDown {
-    100%{
-        transform: none;
-        opacity: 1;
-    }
-}
-
-
-

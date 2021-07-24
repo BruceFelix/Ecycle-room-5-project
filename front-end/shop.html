@@ -34,7 +34,33 @@
 
         <div class="flex-class links">
             <a href="#">Home</a>
-            <p class="flex-class filter">Filter <img src="../icons/arrow.svg" alt="down" class="arrow-down"></p>
+            <p class="flex-class filter">Filter <img src="../icons/arrow.svg" alt="down" class="arrow-down">
+                <form action="#" class="form-filter">
+                    <h3 style="justify-self: left;" >Condition</h3>
+
+                    <div class="radio-buttons">
+                        <input type="radio" name="new" id="old"> New
+                        <input type="radio" name="old" id="old"> Old
+                    </div>
+
+              
+                    <select name="types" id="type">
+                        <option value="defualt">Types</option>
+                        <option value="City Cycle">City Cycle</option>
+                        <option value="Road Bike">Road bike</option>
+                        <option value="Electric Assisted Cycle">Electric Assisted Cycle</option>
+                        <option value="Cross bike">Cross bike</option>
+                        <option value="Mountain bike">Mountain Bike</option>
+                        <option value="Mini Velo">Mini Velo</option>
+                    </select>
+                    <h3 style="justify-self: left;" >Price</h3>
+                    <div class="prices flex-class">
+                        <input type="text" placeholder="min"> -
+                        <input type="text" placeholder="max">
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
             <a href="login.html">Log in</a>
             <a href="signup.html" class="sign-up-btn">Sign up</a>
         </div>
@@ -196,6 +222,12 @@
                     links.classList.toggle("show-links");
                     overlay.classList.toggle("show-overlay");
 
+                })
+                let filter_icon = document.querySelector(".filter")
+                let form_filter = document.querySelector(".form-filter")
+
+                filter_icon.addEventListener("click",function(){
+                    form_filter.classList.toggle("show-grid")
                 })
             </script>
 
