@@ -37,43 +37,50 @@
     <!-- swiperjs effect  -->
     <section class="swiper-container welcome-slider">
         <div class="swiper-wrapper">
-                <article class="flex-class first-slide swiper-slide">
-            
-                        <img src="../images/ebike-removebg-preview.png" alt="twin bicycle" class="slide-bike">
-                
-                    <div class="slide-text">
-                        <h2>
-                            Twin turbo <br>
-                            21 gears <br>
-                            Electric rechargable motor
-                        </h2>
+                <div class="swiper-slide">
+                  <article class="flex-class first-slide ">
 
-                        <button class="buy-btn">
-                            Buy now!!
-                        </button>
-                    </div>
-                </article>
+                          <img src="../images/ebike-removebg-preview.png" alt="twin bicycle" class="slide-bike">
 
-                <article class="flex-class first-slide swiper-slide">
-            
-                    <img src="../images/ebike-removebg-preview.png" alt="twin bicycle" class="slide-bike">
-            
-                <div class="slide-text">
-                    <h2>
-                        Twin turbo <br>
-                        21 gears <br>
-                        Electric rechargable motor
-                    </h2>
+                      <div class="slide-text">
+                          <h2>
+                              Twin turbo <br>
+                              21 gears <br>
+                              Electric rechargable motor
+                          </h2>
 
-                    <button class="buy-btn">
-                        Buy now!!
-                    </button>
+                          <button class="buy-btn">
+                              Buy now!!
+                          </button>
+                      </div>
+                  </article>
                 </div>
-            </article>
+
+                <div class="swiper-slide">
+                  <article class="flex-class first-slide">
+
+                      <img src="../images/ebike2-removebg-preview.png" alt="twin bicycle" class="slide-bike">
+
+                  <div class="slide-text">
+                      <h2>
+                          bi-turbo <br>
+                          21 gears <br>
+
+                      </h2>
+
+                      <button class="buy-btn">
+                          Buy now!!
+                      </button>
+                  </div>
+              </article>
+                </div>
          </div>
 
           <!-- Add Pagination -->
           <div class="swiper-pagination swiper-pagination-2"></div>
+
+          <div class="swiper-button-prev"> </div>
+          <div class="swiper-button-next"></div>
     </section>
     <section class="products-container">
         <h1>Our Products</h1>
@@ -124,16 +131,22 @@
     </footer>
 
 
-    
+
             <!-- Initialize Swiper -->
             <script>
-                let swiper = new Swiper('.swiper-container-2', {
+                let swiper = new Swiper('.swiper-container', {
                 slidesPerView: 'auto',
-                spaceBetween: 20,
+                // spaceBetween: 20,
                 centeredSlides: true,
+
+                // Navigation arrows
+                navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                },
                 freeMode: false,
                 pagination: {
-                    el: '.swiper-pagination-2',
+                    el: '.swiper-pagination',
                     clickable: true,
                 },
                 });
