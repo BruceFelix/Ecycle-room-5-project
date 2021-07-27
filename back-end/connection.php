@@ -32,12 +32,12 @@ else{
 
 // }
 // else{
-//     echo "<h3 style='color:red'>DB not created</h3>";
+//     echo "<h3 style='color:red'>DB not created</h3>".mysqli_error($connection);
 
 // }
 
-//creating table
-$tableCreator = "CREATE TABLE userdetails (id int auto_increment, username varchar(30), password varchar(20), primary key(id), email varchar(50) , dob DATE, code varchar(50))";
+// // //creating table
+// $tableCreator = "CREATE TABLE userdetails (id int auto_increment, username varchar(30), password varchar(100), primary key(id), email varchar(50) , dob DATE, code varchar(50))";
 // if(mysqli_query($connection,$tableCreator)){
 //     echo "<h3 style='color:green'>Table created successfully</h3>";
 // }
