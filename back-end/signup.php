@@ -11,52 +11,39 @@ BruceFelix Macharia CIT-223-015/2018 -->
 
 <?php
 //create db connection
-$user = 'room5';
-$host = 'localhost';
-$password = 'room5';
-$database = 'ecycle';
+require 'connection.php';
 
-if($connection = mysqli_connect($host,$user,$password,$database)){
-    echo "<h3 style='color:green'>Connected successfully</h3>";
+
+//sanitizing user input
+$username = mysqli_escape_string($connection,$_POST["username"]);
+$email = mysqli_escape_string($connection,$_POST["email"]);
+$dob = mysqli_escape_string($connection,$_POST["dob"]);
+$postalCode = mysqli_escape_string($connection,$_POST["code"]);
+
+//hashing a password
+
+$pass = mysqli_escape_string($connection,password_hash($_POST['password'], PASSWORD_BCRYPT));
+
+$insertor = "INSERT INTO userdetails(username,email,dob,code, password) VALUES('$username','$email','$dob','$postalCode','$pass')";
+
+//checking if user email already exists
+$getRecords = "SELECT email FROM userdetails WHERE email ='$email'";
+
+$receivedEmail = mysqli_query($connection,$getRecords);
+if(mysqli_num_rows($receivedEmail)>0)
+{
+    echo "<h3 style='color:red'>This email is used by someone else. Try a different email kindly.</h3>";
 }
 else{
-    echo"<h3 style='color:red'>Could not connect successfully</h3>" .mysqli_error($connection);
-}
+    if(mysqli_query($connection,$insertor)){
 
-// $dbCreator = 'CREATE DATABASE ecycle'; 
-// //sql statement
-// if(mysqli_query($connection,$dbCreator)){
-//     echo "<h3 style='color:green'>DB created successfully</h3>";
+        echo "<h3 style='color:green'>User added successfully</h3>";
 
-// }
-// else{
-//     echo "<h3 style='color:red'>DB not created</h3>";
-
-// }
-
-//creating table
-$tableCreator = "CREATE TABLE userdetails (id int auto_increment, username varchar(30), password varchar(20), primary key(id), email varchar(50) , dob DATE, code varchar(50))";
-if(mysqli_query($connection,$tableCreator)){
-    echo "<h3 style='color:green'>Table created successfully</h3>";
-}
-else{
-    echo "<h3 style='color:red'>table not created</h3>".mysqli_error($connection);
+    }
+    else{
+        echo "<h3 style='color:red'>User not added</h3>" .mysqli_error($connection);
+    }
 }
 
 
-// //sanitizing user input
-// $username = mysqli_escape_string($connection,$_POST["username"]);
-
-
-// //hashing a password
-
-// $pass = mysqli_escape_string($connection,password_hash($_POST['password'], PASSWORD_BCRYPT));
-
-// $insertor = "INSERT INTO userTable(username, password) VALUES('$username','$pass')";
-// if(mysqli_query($connection,$insertor)){
-//     echo "<h3 style='color:green'>User added successfully</h3>";
-// }
-// else{
-//     echo "<h3 style='color:red'>User not added</h3>" .mysqli_error($connection);
-// }
-// ?>
+?>

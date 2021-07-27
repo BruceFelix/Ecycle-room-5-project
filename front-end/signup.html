@@ -27,22 +27,22 @@ BruceFelix Macharia CIT-223-015/2018 -->
     <form action="../back-end/signup.php" method="post" onsubmit="checker()">
         <h1 class="caption">Create an account</h1> <br>
         <label for="username">Enter username</label>
-        <input type="text" name="username" placeholder="e.g John Doe"> <br> 
+        <input type="text"  required name="username" placeholder="e.g John Doe"> <br> 
 
         <label for="email">Enter Email</label>
-        <input type="text" name="email" placeholder="e.g johndoe@gmail.com"> <br> 
+        <input type="text"  required name="email" placeholder="e.g johndoe@gmail.com"> <br> 
 
         <label for="dob" >Enter Date of Birth</label>
-        <input class = "date" type="date" name="dob" placeholder="01/02/2000"> <br> 
+        <input class = "date"  required type="date" name="dob" min="1989-01-01" max="2030-12-31"> <br> 
 
         <label for="code">Enter Postal Code</label>
-        <input type="text" name="code" placeholder="01000-Nairobi"> <br> 
+        <input type="text"  required name="code" placeholder="01000-Nairobi"> <br> 
 
         <label for="password">Enter password</label>
-        <input type="password" name="password" autocomplete="off" placeholder="****" id="pass"> <br> 
+        <input type="password"  required name="password" autocomplete="off" placeholder="****" id="pass"> <br> 
 
         <label for="password">Confirm password</label>
-        <input type="password" name="con-pass" autocomplete="off" placeholder="****" id="con-pass"> <br>
+        <input type="password" required  name="con-pass" autocomplete="off" placeholder="****" id="con-pass"> <br>
         <div class="sect">
     
                 <input type="submit" value="Sign up">
