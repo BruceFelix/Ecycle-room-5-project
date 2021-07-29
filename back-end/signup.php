@@ -38,10 +38,11 @@ else{
     if(mysqli_query($connection,$insertor)){
 
         echo "<h3 style='color:green'>User added successfully</h3>";
+        header("location:../front-end/login.html");
 
     }
     else{
-        echo "<h3 style='color:red'>User not added</h3>" .mysqli_error($connection);
+        echo "<h3 style='color:red'>User not added</h3>".mysqli_error($connection);
     }
 }
 

@@ -10,37 +10,66 @@ BruceFelix Macharia CIT-223-015/2018 -->
 
 <?php
 //create db connection
-$user = 'room5';
-$host = 'localhost';
-$password = 'room5';
-$database = 'accounts';
+session_start();
+require 'connection.php';
 
-if($connection = mysqli_connect($host,$user,$password,$database)){
-    echo "<h3 style='color:green'>Connected successfully</h3>";
-}
-else{
-    echo"<h3 style='color:red'>Could not connect successfully</h3>" .mysqli_error($connection);
-}
+$_SESSION['$attempts '] = 0;
 
 $username = $_POST['username'];
 $pass = $_POST['password'];
 
 //the username entered should match with the password
-$selectUser = "SELECT * FROM userTable  WHERE username = '$username' AND password= '$pass'";
+$selectUser = "SELECT * FROM userdetails  WHERE username='$username' ";
 $received = mysqli_query($connection,$selectUser);
 
 //checking number of rows received
-if(mysqli_num_rows($received)>0){
-    //a record has been found
-    echo "<h3 style='color:green'>Log in successfull</h3> ";
-    echo "<h1> WELCOME </h1>";
-    while($row = mysqli_fetch_assoc($received)){
-        echo "{$row['username']} ";
-    }
+if(!$received){
+    echo "msqli error".mysqli_error($connection);
 }
 else{
-    //no record found
-  echo  "<h3 style='color:red'>Could not log in successfully</h3>" .mysqli_error($connection);
-}
+    $row =mysqli_num_rows($received);
+    $received = mysqli_fetch_assoc($received);
+    if($row>0)
+    {
+        
+        if($_SESSION['$attempts ']<3){
+                if(!password_verify($pass , $received['password']))
+                {
+                    header("location:../front-end/login.html");
+
+                    echo "<div style = 'color:red'> <strong>Check Your password </strong></div>";
+                    $_SESSION['$attempts ']++;
+                }
+                else{
+                    $_SESSION['username'] = $username;
+                    echo $_SESSION['username'];
+                    $_SESSION['$attempts ']++;
+
+                }
+            }
+        else{
+            echo "<div style = 'color:red'> <strong>You can only make 3 attempts at a login </strong></div>";
+        }
+        
+        }
+    else
+         {
+             echo"<h1 style= 'color:red; text-transform: uppercase'>Login fail</h1>";}
+                    }
+       
+// if(mysqli_num_rows($received)>0){
+//     //a record has been found
+//     echo "<h3 style='color:green'>Log in successfull</h3> ";
+//     echo "<h1> WELCOME </h1>";
+//     while($row = mysqli_fetch_assoc($received)){
+//         echo "{$row['username']} ";
+//     }
+// }
+// //     header("login.html");
+// // }
+// else{
+//     //no record found
+//   echo  "<h3 style='color:red'>Could not log in successfully</h3>".mysqli_error($connection);
+// }
 
 ?>
