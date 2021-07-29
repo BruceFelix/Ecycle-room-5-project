@@ -50,6 +50,7 @@ label{
     color: #042f51;
     font-size: 18px;
     font-weight: 600;
+    margin: 10px 0 5px 0;
 }
 input[type="text"], input[type="password"], .date{
     border: none;
