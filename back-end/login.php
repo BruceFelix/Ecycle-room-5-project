@@ -13,7 +13,9 @@ BruceFelix Macharia CIT-223-015/2018 -->
 session_start();
 require 'connection.php';
 
-$_SESSION['$attempts '] = 0;
+if(!isset($_SESSION['attempts'])){
+    $_SESSION['attempts'] = 0;
+}
 
 $username = $_POST['username'];
 $pass = $_POST['password'];
@@ -24,7 +26,7 @@ $received = mysqli_query($connection,$selectUser);
 
 //checking number of rows received
 if(!$received){
-    echo "msqli error".mysqli_error($connection);
+    echo "msqli error" .mysqli_error($connection);
 }
 else{
     $row =mysqli_num_rows($received);
@@ -32,30 +34,45 @@ else{
     if($row>0)
     {
         
-        if($_SESSION['$attempts ']<3){
-                if(!password_verify($pass , $received['password']))
+        if($_SESSION['attempts']<3){
+                if(password_verify($pass,$received['password']))
                 {
-                    header("location:../front-end/login.html");
 
-                    echo "<div style = 'color:red'> <strong>Check Your password </strong></div>";
-                    $_SESSION['$attempts ']++;
+                    $_SESSION['username'] = $username;
+                    echo $_SESSION['username'] ."welcome";
+                     $_SESSION['attempts']++;
+                    echo  $_SESSION['attempts'];
                 }
                 else{
-                    $_SESSION['username'] = $username;
-                    echo $_SESSION['username'];
-                    $_SESSION['$attempts ']++;
+                    echo "<div style = 'color:red'> <strong>Check Your password </strong></div>";
+                 
+                    $_SESSION['attempts']++;
+                    echo $received['username'];
+
+                    echo  $_SESSION['attempts'];
+                    // sleep(5);
+                    // header("location:../front-end/login.html");
 
                 }
             }
         else{
-            echo "<div style = 'color:red'> <strong>You can only make 3 attempts at a login </strong></div>";
+            echo "<div style = 'color:red'> <strong>You can only make 3 attempts at a login. <br> Please wait 10 mins before trying again. </strong></div>";
+            // sleep(5);
+            // header("location:../front-end/login.html");
+
         }
         
         }
     else
          {
-             echo"<h1 style= 'color:red; text-transform: uppercase'>Login fail</h1>";}
+             echo"<h1 style= 'color:red; text-transform: uppercase'>Login fail</h1>";
+           
+             $_SESSION['attempts']++;
+            echo  $_SESSION['attempts'];
+            }
                     }
+
+        
        
 // if(mysqli_num_rows($received)>0){
 //     //a record has been found
@@ -71,5 +88,35 @@ else{
 //     //no record found
 //   echo  "<h3 style='color:red'>Could not log in successfully</h3>".mysqli_error($connection);
 // }
+
+
+//Check to see if our countdown session
+//variable has been initialized.
+if(!isset($_SESSION['countdown'])){
+    //Set the countdown to 120 seconds.
+    $_SESSION['countdown'] = 120;
+    //Store the timestamp of when the countdown began.
+    $_SESSION['time_started'] = time();
+}
+
+//Get the current timestamp.
+$now = time();
+
+//Calculate how many seconds have passed since
+//the countdown began.
+$timeSince = $now - $_SESSION['time_started'];
+
+//How many seconds are remaining?
+$remainingSeconds = abs($_SESSION['countdown'] - $timeSince);
+
+//Print out the countdown.
+echo "There are $remainingSeconds seconds remaining.";
+
+//Check if the countdown has finished.
+if($remainingSeconds < 1){
+   //Finished! Do something.
+   echo "<h1> It is done</h1>";
+}
+
 
 ?>
