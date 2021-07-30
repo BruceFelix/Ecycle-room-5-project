@@ -40,8 +40,9 @@ else{
 
                     $_SESSION['username'] = $username;
                     echo $_SESSION['username'] ."welcome";
-                     $_SESSION['attempts']++;
-                    echo  $_SESSION['attempts'];
+                    sleep(5);
+                    header("location: ../front-end/shop.html");
+                     
                 }
                 else{
                     echo "<div style = 'color:red'> <strong>Check Your password </strong></div>";
