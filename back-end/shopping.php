@@ -1,76 +1,57 @@
 <?php
 // mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 require 'connection.php';
+$picturesDir = 'pictures/';
 
-$tableCreator = "CREATE TABLE bikedetails (id int auto_increment, prodname varchar(30), biketype varchar(50), primary key(id), price int, bikecondition varchar(40), picture varchar(50))";
-// if(mysqli_query($connection,$tableCreator)){
-//     echo "<h3 style='color:green'>Table created successfully</h3>";
-// }
-// else{
-//     echo "<h3 style='color:red'>table not created</h3>" .mysqli_error($connection);
-// }
+if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
+  $imageFIle = basename($_FILES['image']['name']);
 
+  $targetfilepath = $picturesDir.$imageFIle;
+  $fileType = pathinfo($targetfilepath,PATHINFO_EXTENSION);
 
+  $prodname = mysqli_escape_string($connection,$_POST['brand']); 
+  $biketype = mysqli_escape_string($connection,$_POST['type']); 
+  $price = mysqli_escape_string($connection,$_POST['price']); 
+  $bikecondition = mysqli_escape_string($connection,$_POST['condition']); 
 
-$targetDir = "pictures/";
-
-
-if(isset($_POST["submit"]) && !empty($_FILES["image"]["name"])){
-  $fileName = basename($_FILES["image"]["name"]);
-
-  $targetFilePath = $targetDir . $fileName;
-  $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-
-  $tempname = $_FILES['image']['tmp_name'];
+  $tempName = $_FILES['image']['tmp_name'];
   $fileSize = $_FILES['image']['size'];
   $fileError = $_FILES['image']['type'];
 
-  $brand = mysqli_escape_string($connection,$_POST['brand']);
-  $type = mysqli_escape_string($connection,$_POST['type']);
-  $price = mysqli_escape_string($connection,$_POST['price']);
-  $condition = mysqli_escape_string($connection,$_POST['condition']);
+  $file_extension = explode('.',$imageFIle);
+  $fileActualExtension = strtolower(end($file_extension));
 
-
-
-  $fileExt = explode('.', $fileName);
-  $fileActualExt = strtolower(end($fileExt));
-
-  //allow certain file formats
-  $allowedFormats = array('jpg','jpeg','png','gif','pdf');
-  if(in_array($fileType, $allowedFormats)){
-    if($fileError == 0 ){
+  $imageFormats = array("jpg","jpeg","png","gif");
+  
+  if(in_array($fileType,$imageFormats)){
+    
       if($fileSize < 1000000){
-        //upload to folder
-        $fileNameNew = uniqid('', true).".".$fileActualExt;
-        $fileDestination = 'pictures/'.$fileName;
-        move_uploaded_file($tempname, $fileDestination);
-        echo "Uploaded to images folder.<br>";
-      }else{
-        echo "Your file size is too large.<br>";
+        $newFileName = uniqid('',true).".".$fileActualExtension;
+        $fileDestination = "pictures/".$imageFIle;
+        move_uploaded_file($tempName,$fileDestination);
+        echo "Image uploaded to images folder <br>";
       }
-    }else{
-      echo "Error uploading file.<br>";
-    }
+      else{
+        echo "File size too large";
+      }
 
     $image = $_FILES['image']['tmp_name'];
+    $insertintodb = "INSERT INTO bikedetails(prodname,biketype,price,bikecondition,picture) 
+    VALUES ('$prodname','$biketype','$price','$bikecondition','$imageFIle')";
+    $recordquery = mysqli_query($connection, $insertintodb);
 
-   //insert image content into db
-    $insert = "INSERT INTO products(prodname, biketype, bikecondition, price, picture) VALUES('$brand', '$type','$condition','$price','$fileName')";
-    $result = mysqli_query($connection, $insert);
-
-    if($result){
-      echo "File uploaded successfully to server database<br>";
-    }else{
-      echo "Sorry, please try again.<br>";
+    if($recordquery){
+      echo "Uploaded to successfuly";
     }
-}else{
-  echo "Only JPG, JPEG, PNG, GIF, and PDF files are allowed.<br>";
+    else{
+      echo "Image not updaded".mysqli_error($connection);
+    }
+  }
+  else{
+    echo "Only this types of extensions are allowed";
+  }
 }
-}else{
-  echo "Please select a product picture to upload.<br>";
+else{
+  echo "Picture not selected";
 }
-
-
-
-
 ?>

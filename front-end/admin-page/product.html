@@ -7,24 +7,24 @@
     cycle | Cross-bike | Mountain bike | Mini Velo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eCycle | New Product page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="shop.css">
-    <link rel="stylesheet" href="product.css">
-    <link rel="shortcut icon" href="../icons/logos/logo.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/shop.css">
+    <link rel="stylesheet" href="/styles/product.css">
+    <link rel="shortcut icon" href="/icons/logos/logo.PNG" type="image/x-icon">
 </head>
 <body>
     <nav>
-        <img src="../icons/logos/logo.PNG" alt="logo" class="logo">
+        <img src="/icons/logo.PNG" alt="logo" class="logo">
 
-        <p class="menu-bar flex-p"> <img src="../icons/menu-svgrepo-com.svg" class="icon">Menu</p>
+        <p class="menu-bar flex-p"> <img src="/icons/menu.svg" class="icon">Menu</p>
 
         <div class="flex-class links">
-            <a href="product.html">Home</a>
-            <a href="login.html" class="sign-up-btn">Log out</a>
+            <a href="/front-end/admin-page/admin.html">Home</a>
+            <a href="/front-end/login-page/login.html " class="sign-up-btn">Log out</a>
         </div>
     </nav>
     <section>
-        <form action="../back-end/shopping.php" method="POST">
+        <form action="/back-end/shopping.php" method="POST" enctype="multipart/form-data">
             <h3>Add New Product</h3>
             <div class="one">
                 <label for="brand">Brand Name</label>
@@ -54,8 +54,8 @@
                 </select>
             </div>
             <div class="five">
-                <label for="picture">Add bicycle picture</label>
-                <input type="file" name="name" id="">
+                <label for="image">Add bicycle picture</label>
+                <input type="file" name="image" id="">
             </div>
             <div class="six">
                 <input type="submit" name="submit" id="sub" value="Submit!">
@@ -77,15 +77,15 @@
 
         <div class="footer-partners">
             <h2>Our Partners</h2>
-            <img src="../icons/tlc-logo 1.svg" alt="">
-            <img src="../icons/cycle_logo-removebg-preview 1.svg" alt="">
+            <img src="/icons/tlc-logo 1.svg" alt="">
+            <img src="/icons/cycle_logo-removebg-preview 1.svg" alt="">
         </div>
         <div class="footer-social-media">
             <h2>Follow us on:</h2>
             <ul>
-                <li><a href="#" class="flex-p"> <img class="icon" src="../icons/facebook-svgrepo-com.svg" alt=""> @eCycle_Kenya</a></li>
-                <li><a href="#" class="flex-p"> <img class="icon" src="../icons/twitter-svgrepo-com.svg" alt=""> eCycle_Kenya</a></li>
-                <li><a href="#" class="flex-p"> <img class="icon" src="../icons/youtube-svgrepo-com.svg" alt=""> eCcyle Kenya </a></li>
+                <li><a href="#" class="flex-p"> <img class="icon" src="/icons/facebook-svgrepo-com.svg" alt=""> @eCycle_Kenya</a></li>
+                <li><a href="#" class="flex-p"> <img class="icon" src="/icons/twitter-svgrepo-com.svg" alt=""> eCycle_Kenya</a></li>
+                <li><a href="#" class="flex-p"> <img class="icon" src="/icons/youtube-svgrepo-com.svg" alt=""> eCcyle Kenya </a></li>
             </ul>
         </div>
 </footer>

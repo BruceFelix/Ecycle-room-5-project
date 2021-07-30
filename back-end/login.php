@@ -17,8 +17,8 @@ if(!isset($_SESSION['attempts'])){
     $_SESSION['attempts'] = 0;
 }
 
-$username = $_POST['username'];
-$pass = $_POST['password'];
+$username = mysqli_escape_string($connection,$_POST['username']);
+$pass = mysqli_escape_string($connection,$_POST['password']);
 
 //the username entered should match with the password
 $selectUser = "SELECT * FROM userdetails  WHERE username='$username' ";
@@ -40,7 +40,8 @@ else{
 
                     $_SESSION['username'] = $username;
                     echo $_SESSION['username'] ."welcome";
-                    sleep(5);
+                   //delay the code below for 5 seconds
+                    // sleep(5);
                     header("location: ../front-end/shop.html");
                      
                 }
@@ -48,9 +49,10 @@ else{
                     echo "<div style = 'color:red'> <strong>Check Your password </strong></div>";
                  
                     $_SESSION['attempts']++;
-                    echo $received['username'];
+                
+                    header("location: ../front-end/login.html");
 
-                    echo  $_SESSION['attempts'];
+                    echo "<div style = 'color:red'> <strong>You have " .(3-$_SESSION['attempts']) ." attempts left. </strong></div>";
                     // sleep(5);
                     // header("location:../front-end/login.html");
 

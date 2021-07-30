@@ -37,7 +37,7 @@ else{
 // }
 
 // // //creating table
-// $tableCreator = "CREATE TABLE userdetails (id int auto_increment, username varchar(30), password varchar(100), primary key(id), email varchar(50) , dob DATE, code varchar(50))";
+// $tableCreator = "CREATE TABLE userdetails (id int auto_increment, username varchar(30), password varchar(253), primary key(id), email varchar(50) , dob DATE, code varchar(50))";
 // if(mysqli_query($connection,$tableCreator)){
 //     echo "<h3 style='color:green'>Table created successfully</h3>";
 // }
@@ -45,5 +45,12 @@ else{
 //     echo "<h3 style='color:red'>table not created</h3>".mysqli_error($connection);
 // }
 
+// $tableCreator = "CREATE TABLE bikedetails (id int auto_increment, prodname varchar(30), biketype varchar(50), primary key(id), price int, bikecondition varchar(40), picture varchar(50))";
+// if(mysqli_query($connection,$tableCreator)){
+//     echo "<h3 style='color:green'>Table created successfully</h3>";
+// }
+// else{
+//     echo "<h3 style='color:red'>table not created</h3>" .mysqli_error($connection);
+// }
 
 ?>

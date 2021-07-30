@@ -28,7 +28,7 @@ function inactivityTime() {
 function destroy_session(){
     // var xmlhttp = getXmlHttp();
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET','../back-end/destroy.php', true);
+    // xmlhttp.open('GET','../back-end/destroy.php', true);
 
     xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState == 4){
@@ -40,4 +40,4 @@ function destroy_session(){
     };
     xmlhttp.send(null);
 }
-destroy_session();
+// destroy_session();
