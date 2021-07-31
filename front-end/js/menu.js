@@ -15,9 +15,9 @@ let overlay = document.querySelector(".dark-overlay");
        overlay.classList.toggle("show-overlay");
 
 })
-let filter_icon = document.querySelector(".filter")
-let form_filter = document.querySelector(".form-filter")
+// let filter_icon = document.querySelector(".filter")
+// let form_filter = document.querySelector(".form-filter")
 
-filter_icon.addEventListener("click",function(){
-     form_filter.classList.toggle("show-grid")
- })
+// filter_icon.addEventListener("click",function(){
+//      form_filter.classList.toggle("show-grid")
+//  })
