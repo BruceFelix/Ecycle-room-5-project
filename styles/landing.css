@@ -14,15 +14,17 @@ img{
 section{
   position: relative;
   width: 100%;
-  max-height: 100%;
-  top: 50px;
-  padding: 50px;
+  /* max-height: 100%; */
+  /* top: 50px; */
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background:  	#FFFFFF;
   margin-bottom: 20px;
-  background: linear-gradient(-79.2deg,transparent,#8fea93);
+  /* max-height: 100vh; */
+  padding-top: 5rem;
+  /* background: linear-gradient(-79.2deg,transparent,#8fea93); */
 
 
 
@@ -107,16 +109,21 @@ header ul li a:hover{
 }
 .content .textBox{
   position: relative;
-  max-width: 600px;
+  /* max-width: 600px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
 }
 .content .textBox h2
 {
-  color: #333;
+  /* color: #333; */
   font-size: 4em;
   line-height: 1.4em;
   font-weight: 500;
 }
-.content .textBox h2 span
+.company-title
 {
   color: #017143;
   font-size: 1.2em;
@@ -124,7 +131,10 @@ header ul li a:hover{
 }
 .content .textBox p
 {
-  color: #333;
+  color: #1e1e1e;
+max-width: 500px;
+margin: 20px 0;
+font-weight: 500;
 }
 .content .textBox a{
 
@@ -145,25 +155,34 @@ header ul li a:hover{
     color: #fff;
     letter-spacing: 2px;
 }
-.content.imgBox
+.content .imgBox
 {
-  width: 400px;
+  max-width: 500px;
+  align-self: flex-end;
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
-  margin-top: 50px;
+  /* padding-right: 50px; */
+  margin-top: 10px;
+  margin-bottom: 1.3em;
+  transform: translateY(-10rem);
 }
-.content.imgBox img{
-  max-width: 100px;
-  max-height: 300px;
+.content .imgBox img{
+  /* max-width: 100px; */
+  /* max-height: 300px; */
+  width: 100%;
+  height: auto;
 
 }
 .thumb{
   position: absolute;
   right: 50%;
   bottom:20px;
-  transform: translateX();
+  transform: translateX(50%);
   display:flex;
+  width: 100%;
+justify-content: space-evenly;
+/* margin-top: 32px; */
+max-width: 450px;
 }
 .thumb li{
   list-style: none;
@@ -172,7 +191,7 @@ header ul li a:hover{
   cursor: pointer;
   transition: 0.5s;
 }
-thumb li hover{
+.thumb li hover{
   transform: translateY(-15px);
 }
 .thumb li img{
@@ -196,7 +215,7 @@ thumb li hover{
 }
 .testimonials{
   padding: 40px 0;
-  background: #f1f1f1;
+  /* background: #f1f1f1; */
   color: #434343;
 }
 .inner{
@@ -218,27 +237,44 @@ thumb li hover{
 }
 .col{
   flex: 33.33%;
-  max-width: 33.33%;
+  /* max-width: 33.33%; */
   box-sizing: border-box;
-  padding: 15px;
+  padding: 10px 8px;
+  min-width: 220px
 }
 .testimonial
 {
   background: #fff;
-  padding: 30px;
+  padding: 14px;
+  box-shadow: var(--boxshadow);
+  display: grid;
+
 }
 .testimonial img{
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  justify-self: center;
 }
 .name{
   font-size: 20px;
   text-transform: uppercase;
 }
-@media screen and (max-width:960) {
+@media screen and (max-width:960px) {
+  section{
+    padding: 10px;
+    padding-top: 3rem;
+    top: 10px;
+    max-height: unset;
+  }
+  .content .textBox h2 {
+    /* color: #333; */
+    font-size: 2.5em;
+  }
+.content .imgBox{
+  transform: translateY(-2.5rem);
 
-
+}
 
 
 }
