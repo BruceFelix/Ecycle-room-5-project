@@ -124,7 +124,8 @@
     font-size: 18px;
 }
 .container-fluid{
-    width: 40%;
+    /* width: 40%; */
+    max-width: 400px;
     margin: 0 auto;
     margin-top: 0px;
     margin-bottom: 50px;
@@ -134,10 +135,11 @@
     color: #333;
     position: relative;
     margin: 0 auto;
-    width: 40rem;
+    /* width: 40rem; */
     font-size: 30px;
     font-weight: 500;
     max-width: fit-content;
+    text-align: center;
 }
 .accordion{
     width: 100%;
@@ -193,10 +195,14 @@
 
 @media (max-width: 991px){
     .contact{
-        padding: 50px;
+        padding: 20px;
+        padding-top: 3rem;
     }
     .container{
         flex-direction: column;
+    }
+    .container-fluid h2{
+        font-size: 20px;
     }
     .container .contactinfo{
         margin-bottom: 40px;
