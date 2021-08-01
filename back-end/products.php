@@ -16,7 +16,7 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
 
   $tempName = $_FILES['image']['tmp_name'];
   $fileSize = $_FILES['image']['size'];
-  $fileError = $_FILES['image']['type'];
+  $fileType = $_FILES['image']['type'];
 
   $file_extension = explode('.',$imageFIle);
   $fileActualExtension = strtolower(end($file_extension));
@@ -35,7 +35,7 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
         echo "File size too large";
       }
 
-    $image = $_FILES['image']['tmp_name'];
+    // $image = $_FILES['image']['tmp_name'];
     $insertintodb = "INSERT INTO bikedetails(prodname,biketype,price,bikecondition,picture) 
     VALUES ('$prodname','$biketype','$price','$bikecondition','$imageFIle')";
     $recordquery = mysqli_query($connection, $insertintodb);
@@ -54,4 +54,6 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
 else{
   echo "Picture not selected";
 }
+
+
 ?>
