@@ -17,11 +17,11 @@ if(!isset($_SESSION['attempts'])){
     $_SESSION['attempts'] = 0;
 }
 
-$username = mysqli_escape_string($connection,$_POST['username']);
+$email = mysqli_escape_string($connection,$_POST['email']);
 $pass = mysqli_escape_string($connection,$_POST['password']);
 
 //the username entered should match with the password
-$selectUser = "SELECT * FROM userdetails  WHERE username='$username' ";
+$selectUser = "SELECT * FROM userdetails  WHERE email='$email' ";
 $received = mysqli_query($connection,$selectUser);
 
 //checking number of rows received
