@@ -93,7 +93,11 @@ input[type="reset"]{
     display: flex;
 justify-content: space-around;
 }
+.username{
+  text-align: center;
+  color: rgb(255, 35, 35);
 
+}
 
 /* animations  */
 .shake::placeholder{
