@@ -64,7 +64,7 @@
                     <input type="submit" value="Submit">
                 </form>
             </p>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.php">Contact Us</a>
            
             <?php
           if(!isset($_SESSION['username'])){
@@ -73,6 +73,10 @@
           }
           else{
             echo "<p class='sign-up-btn'> Hi ".$_SESSION['username']. "</p>";
+            echo "
+            <form action='../../back-end/destroy.php' method='post' class='logout-Form'>
+                <input type='submit' value='Log out' id='log-out-btn'>
+            </form>";
           }
 
           ?>
