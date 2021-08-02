@@ -16,7 +16,7 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
 
   $tempName = $_FILES['image']['tmp_name'];
   $fileSize = $_FILES['image']['size'];
-  $fileType = $_FILES['image']['type'];
+  // $fileType = $_FILES['image']['type'];
 
   $file_extension = explode('.',$imageFIle);
   $fileActualExtension = strtolower(end($file_extension));
