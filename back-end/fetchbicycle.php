@@ -37,8 +37,8 @@ if($fetchfromdb){
 <body>
     <?php
     for($i = 0; $i < count($imageprods); $i++){ ?>
-        <img src ="pictures\<?php echo implode(', ', $imageprods[$i]); ?>" alt ="No images">
-        <label for=""><?php echo $productnames[$i]; ?></label>
+        <img src ="pictures\<?php echo $productimage; ?>" alt ="No images" width= "100px" height = "100px">
+        <label for=""><?php echo $productname; ?></label>
 
     <?php } ?>
 </body>

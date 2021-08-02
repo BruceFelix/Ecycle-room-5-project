@@ -1,6 +1,7 @@
 <?php
 // mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 require 'connection.php';
+
 $picturesDir = 'pictures/';
 
 if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
@@ -11,23 +12,23 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
 
   $prodname = mysqli_escape_string($connection,$_POST['brand']); 
   $biketype = mysqli_escape_string($connection,$_POST['type']); 
-  $price = mysqli_escape_string($connection,$_POST['price']); 
   $bikecondition = mysqli_escape_string($connection,$_POST['condition']); 
+  $price = mysqli_escape_string($connection,$_POST['price']); 
 
   $tempName = $_FILES['image']['tmp_name'];
   $fileSize = $_FILES['image']['size'];
-  $fileType = $_FILES['image']['type'];
+  // $file = $_FILES['image']['type'];
 
   $file_extension = explode('.',$imageFIle);
   $fileActualExtension = strtolower(end($file_extension));
 
-  $imageFormats = array("jpg","jpeg","png","gif");
+  $imageFormats = array('jpg','jpeg','png','gif');
   
   if(in_array($fileType,$imageFormats)){
     
       if($fileSize < 1000000){
         $newFileName = uniqid('',true).".".$fileActualExtension;
-        $fileDestination = "pictures/".$imageFIle;
+        $fileDestination = 'pictures/'.$imageFIle;
         move_uploaded_file($tempName,$fileDestination);
         echo "Image uploaded to images folder <br>";
       }
@@ -36,8 +37,8 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
       }
 
     // $image = $_FILES['image']['tmp_name'];
-    $insertintodb = "INSERT INTO bikedetails(prodname,biketype,price,bikecondition,picture) 
-    VALUES ('$prodname','$biketype','$price','$bikecondition','$imageFIle')";
+    $insertintodb = "INSERT INTO bikedetails(prodname,biketype,bikecondition,price,picture) 
+    VALUES ('$prodname','$biketype','$bikecondition','$price','$imageFIle')";
     $recordquery = mysqli_query($connection, $insertintodb);
 
     if($recordquery){
@@ -48,7 +49,7 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
     }
   }
   else{
-    echo "Only this types of extensions are allowed";
+    echo "Only this types of extensions are allowed".mysqli_error($connection );
   }
 }
 else{
