@@ -60,18 +60,18 @@
                 </div>
             </div>
             <div class="contactform">
-                <form>
+                <form method="POST" action="../../back-end/contact.php">
                     <h2>Send us a Message</h2>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="Username" required="required">
                         <span>Full name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="Useremail" required="required">
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea required="required" name="message"></textarea>
                         <span>Type your message...</span>
                     </div>
                     <div class="inputBox">

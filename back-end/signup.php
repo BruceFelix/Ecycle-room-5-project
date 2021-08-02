@@ -38,7 +38,7 @@ else{
     if(mysqli_query($connection,$insertor)){
 
         echo "<h3 style='color:green'>User added successfully</h3>";
-        header("location:../front-end/login.html");
+        header("location:../front-end/login-page/login.html");
 
     }
     else{

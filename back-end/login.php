@@ -12,11 +12,15 @@ BruceFelix Macharia CIT-223-015/2018 -->
 //create db connection
 session_start();
 require 'connection.php';
-
+if(!isset($_SESSION['errorNumber'])){
+    $_SESSION['errorNumber'] = 0;
+}
 if(!isset($_SESSION['attempts'])){
     $_SESSION['attempts'] = 0;
 }
 
+if(isset($_POST['username']) && isset($_POST['password'])){
+    
 $username = mysqli_escape_string($connection,$_POST['username']);
 $pass = mysqli_escape_string($connection,$_POST['password']);
 
@@ -42,39 +46,48 @@ else{
                     echo $_SESSION['username'] ."welcome";
                    //delay the code below for 5 seconds
                     // sleep(5);
-                    header("location: ../front-end/shop.html");
+                    header("location: ../front-end/landing-shop/shop.html");
                      
                 }
                 else{
-                    echo "<div style = 'color:red'> <strong>Check Your password </strong></div>";
+                    $_SESSION['errorNumber'] = 1;
+                   $checkPassword = "<div style = 'color:red'> <strong>Check Your password </strong></div>";
                  
                     $_SESSION['attempts']++;
                 
-                    header("location: ../front-end/login.html");
+                    // header("location: ../front-end/login-page/login.html");
 
-                    echo "<div style = 'color:red'> <strong>You have " .(3-$_SESSION['attempts']) ." attempts left. </strong></div>";
+                    $attemptsLeft = "<div style = 'color:red'> <strong>You have " .(3-$_SESSION['attempts']) ." attempts left. </strong></div>";
                     // sleep(5);
-                    // header("location:../front-end/login.html");
+                    header("location:../front-end/login-page/loginNew.php");
 
                 }
             }
         else{
-            echo "<div style = 'color:red'> <strong>You can only make 3 attempts at a login. <br> Please wait 10 mins before trying again. </strong></div>";
+            $_SESSION['errorNumber'] = 2;
+            $endOfAttempts = "<div style = 'color:red'> <strong>You can only make 3 attempts at a login. <br> Please wait 10 mins before trying again. </strong></div>";
             // sleep(5);
             // header("location:../front-end/login.html");
+            header("location:../front-end/login-page/loginNew.php");
+
 
         }
         
         }
     else
          {
-             echo"<h1 style= 'color:red; text-transform: uppercase'>Login fail</h1>";
+            $_SESSION['errorNumber'] = 3;
+             $noUser = "<h1 style= 'color:red; text-transform: uppercase'>User not registered</h1> <br> ";
            
-             $_SESSION['attempts']++;
+            
             echo  $_SESSION['attempts'];
+            header("location:../front-end/login-page/loginNew.php");
+
             }
                     }
 
+
+}
         
        
 // if(mysqli_num_rows($received)>0){
@@ -113,12 +126,12 @@ $timeSince = $now - $_SESSION['time_started'];
 $remainingSeconds = abs($_SESSION['countdown'] - $timeSince);
 
 //Print out the countdown.
-echo "There are $remainingSeconds seconds remaining.";
+// echo "There are $remainingSeconds seconds remaining.";
 
 //Check if the countdown has finished.
 if($remainingSeconds < 1){
    //Finished! Do something.
-   echo "<h1> It is done</h1>";
+//    echo "<h1> It is done</h1>";
 }
 
 

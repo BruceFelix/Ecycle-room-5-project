@@ -9,6 +9,7 @@ BruceFelix Macharia CIT-223-015/2018  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
+
 *{
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -22,6 +23,7 @@ body{
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     place-items: center;
     justify-content: center;
     margin: auto;
