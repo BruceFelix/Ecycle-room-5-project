@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +15,13 @@
     <link rel="stylesheet" href="../../styles/swiper.min.css">
     <script src="../js/swiper.min.js"></script>
 
-
     <link rel="stylesheet" href="../../styles/style.css">
+
     <link rel="stylesheet" href="../../styles/shop.css">
+
     <link rel="shortcut icon" href="../../icons/logos/logo.PNG" type="image/x-icon">
 
-
+    <script src="../js/inactivity.js"></script>
 </head>
 <body>
     <nav>
@@ -36,10 +39,27 @@
 
         <div class="flex-class links">
             <a href="../landing-shop/landing.php">Home</a>
-
-            <a href="../landing-shop/contact.html">Contact Us</a>
             <p><a href="product.html">New Product</a></p>
-            <a href="../login-page/login.html" class="sign-up-btn">Log out</a>
+
+            
+            <?php
+          if(!isset($_SESSION['username'])){
+           echo "<a href='../login-page/login.html'>Log in</a>";
+            echo "<div class='sign-holder'>
+            <a href='../signup-page/signup.html' class='sign-up-btn'>Sign up</a></div>";
+          }
+          else{
+            echo "<p class='sign-up-btn'>Welcome ".$_SESSION['username']. "</p>";
+            echo "
+            <form action='../../back-end/destroy.php' method='post' class='logout-Form'>
+        <input type='submit' value='Log out' id='log-out-btn'>
+         </form>";
+          }
+
+          ?>
+
+          
+            <!-- <a onclick="destroy_session()" href="../landing-shop/landing.php" class="sign-up-btn">Log out</a> -->
         </div>
     </nav>
 

@@ -96,7 +96,27 @@ justify-content: space-around;
 .username{
   text-align: center;
   color: rgb(255, 35, 35);
+}
 
+.logout-Form{
+  background: unset;
+  width: unset;
+    min-height: unset;
+    background-color: unset; 
+    padding: unset; 
+    border-radius: unset; 
+    text-align: unset;
+    display: unset; 
+    box-shadow: unset; 
+    position: unset; 
+}
+#log-out-btn{
+  width: max-content;
+  padding: 4px 8px;
+  background: unset;
+  color: black;
+  border: 2px solid white;
+  background: white;
 }
 
 /* animations  */
