@@ -95,6 +95,50 @@ header ul li a:hover{
 .navigation.signup a:hover::before {
   transform: translateY(0px);
 }
+.sign-up-btn {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.hoverText{
+  position: absolute;
+  z-index: 3;
+
+  display: none;
+  width: 120px;
+background: #000000de;
+padding: 5px;
+color: white;
+/* right: 0px; */
+border-radius: 4px;
+text-align: center;
+top: 91%;
+right: 0;
+}
+.sign-holder{
+  position: relative;
+}
+.sign-holder:hover .hoverText{
+  display: block;
+}
+
+.sign-up-btn .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.sign-up-btn:hover .tooltiptext {
+  visibility: visible;
+}
 .slider{
   top: 50px;
   margin-bottom: 50px;
@@ -167,7 +211,7 @@ font-weight: 500;
   transform: translateY(-5rem);
 }
 .content .imgBox img{
-  /* max-width: 500px; 
+  /* max-width: 500px;
   max-height: 300px; */
   width: 100%;
   height: auto;

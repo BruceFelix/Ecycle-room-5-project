@@ -46,7 +46,14 @@ else{
                     echo $_SESSION['username'] ."welcome";
                    //delay the code below for 5 seconds
                     // sleep(5);
-                    header("location: ../front-end/landing-shop/landing.php");
+
+                    //if its the admin logging in, take him to admin page
+                    if($username == 'admin'){
+                        header("location: ../front-end/admin-page/admin.php");
+                    }
+                    else{
+                        header("location: ../front-end/landing-shop/landing.php");
+                    }
                      
                 }
                 else{

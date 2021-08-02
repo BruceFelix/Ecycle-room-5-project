@@ -33,7 +33,12 @@
           <?php
           if(!isset($_SESSION['username'])){
            echo "<a href='../login-page/login.html'>Log in</a>";
-            echo "<a href='../signup-page/signup.html' class='sign-up-btn'>Sign up</a>";
+            echo "<div class='sign-holder'>
+            <a href='../signup-page/signup.html' class='sign-up-btn'>Sign up</a>
+            <p class='hoverText'>
+              15% off on first order!!
+            </p>
+          </div>";
           }
           else{
             echo "<p class='sign-up-btn'> Hi ".$_SESSION['username']. "</p>";

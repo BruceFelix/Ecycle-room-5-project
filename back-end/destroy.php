@@ -21,5 +21,7 @@
     unset($_SESSION['username']);
     session_destroy();
 
-    echo 'Session was destroyed';
+    header("location: ../front-end/landing-shop/landing.php");
+
+
 ?>
