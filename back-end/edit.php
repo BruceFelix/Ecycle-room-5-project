@@ -28,10 +28,11 @@ if($row>0)
                 {
                     $changeDetails = "UPDATE userdetails SET code = '$postalCode', password ='$newPass' WHERE username='$username'";
                     if(mysqli_query($connection,$changeDetails)){
-                        echo "Successful";
+                        // echo "Successful";
+                        header('location:../front-end/landing-shop/landing.php');
                     }
                     else{
-                        echo "Alert alert";
+                        echo "Error";
                     }
                 }
                 else{

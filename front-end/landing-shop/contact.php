@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +21,28 @@
         <img src="../../icons/logo.PNG" alt="logo" class="logo">
         <p class="menu-bar flex-p"> <img src="../../icons/menu.svg" class="icon">Menu</p>
         <div class="flex-class links">
-            <a href="landing.html">Home</a>
-          <a href="shop.html">Shop</a>
+            <a href="landing.php">Home</a>
+          <a href="shop.php">Shop</a>
 
-            <a href="../../front-end/login-page/login.html">Log in</a>
-            <a href="../../front-end/signup-page/signup.html" class="sign-up-btn">Sign up</a>
+          <?php
+          if(!isset($_SESSION['username'])){
+           echo "<a href='../login-page/login.html'>Log in</a>";
+            echo "<div class='sign-holder'>
+            <a href='../signup-page/signup.html' class='sign-up-btn'>Sign up</a>
+            <p class='hoverText'>
+              15% off on first order!!
+            </p>
+          </div>";
+          }
+          else{
+            echo "<p class='sign-up-btn'> Hi ".$_SESSION['username']. "</p>";
+            echo "
+            <form action='../../back-end/destroy.php' method='post' class='logout-Form'>
+                <input type='submit' value='Log out' id='log-out-btn'>
+            </form>";
+          }
+
+          ?>
         </div>
     </nav>
 

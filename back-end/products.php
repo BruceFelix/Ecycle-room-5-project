@@ -42,6 +42,7 @@ if(isset($_POST['submit']) && !empty($_FILES['image']['name'])){
 
     if($recordquery){
       echo "Uploaded to successfuly";
+      header('location:../front-end/admin-page/admin.php');
     }
     else{
       echo "Image not updaded".mysqli_error($connection);

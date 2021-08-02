@@ -12,6 +12,7 @@ BruceFelix Macharia CIT-223-015/2018 -->
 //create db connection
 session_start();
 require 'connection.php';
+
 if(!isset($_SESSION['errorNumber'])){
     $_SESSION['errorNumber'] = 0;
 }
@@ -39,11 +40,13 @@ else{
     {
         
         if($_SESSION['attempts']<3){
+
+            //php ftn for checking hashed passwords
                 if(password_verify($pass,$received['password']))
                 {
 
                     $_SESSION['username'] = $username;
-                    echo $_SESSION['username'] ."welcome";
+                    // echo $_SESSION['username'] ."welcome";
                    //delay the code below for 5 seconds
                     // sleep(5);
 
@@ -51,6 +54,7 @@ else{
                     if($username == 'admin'){
                         header("location: ../front-end/admin-page/admin.php");
                     }
+                    //go to landing page
                     else{
                         header("location: ../front-end/landing-shop/landing.php");
                     }
@@ -71,8 +75,9 @@ else{
                 }
             }
         else{
+            // when there are more than 3
             $_SESSION['errorNumber'] = 2;
-            $endOfAttempts = "<div style = 'color:red'> <strong>You can only make 3 attempts at a login. <br> Please wait 10 mins before trying again. </strong></div>";
+            $endOfAttempts = "<div style = 'color:red'> <strong>You can only make 3 attempts at a login. <br> Please contact your website admin. </strong></div>";
             // sleep(5);
             // header("location:../front-end/login.html");
             header("location:../front-end/login-page/loginNew.php");
@@ -84,7 +89,7 @@ else{
     else
          {
             $_SESSION['errorNumber'] = 3;
-             $noUser = "<h1 style= 'color:red; text-transform: uppercase;'>User not registered</h1> <br> ";
+             $noUser = "<h1 style= 'color:red;'>User not registered</h1> <br> ";
            
             
             echo  $_SESSION['attempts'];

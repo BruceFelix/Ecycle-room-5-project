@@ -42,6 +42,10 @@
           }
           else{
             echo "<p class='sign-up-btn'> Hi ".$_SESSION['username']. "</p>";
+            echo "
+            <form action='../../back-end/destroy.php' method='post' class='logout-Form'>
+                <input type='submit' value='Log out' id='log-out-btn'>
+            </form>";
           }
 
           ?>
