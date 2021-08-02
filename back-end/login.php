@@ -46,7 +46,7 @@ else{
                     echo $_SESSION['username'] ."welcome";
                    //delay the code below for 5 seconds
                     // sleep(5);
-                    header("location: ../front-end/landing-shop/shop.html");
+                    header("location: ../front-end/landing-shop/landing.php");
                      
                 }
                 else{
@@ -77,7 +77,7 @@ else{
     else
          {
             $_SESSION['errorNumber'] = 3;
-             $noUser = "<h1 style= 'color:red; text-transform: uppercase'>User not registered</h1> <br> ";
+             $noUser = "<h1 style= 'color:red; text-transform: uppercase;'>User not registered</h1> <br> ";
            
             
             echo  $_SESSION['attempts'];
@@ -89,50 +89,36 @@ else{
 
 }
         
-       
-// if(mysqli_num_rows($received)>0){
-//     //a record has been found
-//     echo "<h3 style='color:green'>Log in successfull</h3> ";
-//     echo "<h1> WELCOME </h1>";
-//     while($row = mysqli_fetch_assoc($received)){
-//         echo "{$row['username']} ";
-//     }
-// }
-// //     header("login.html");
-// // }
-// else{
-//     //no record found
-//   echo  "<h3 style='color:red'>Could not log in successfully</h3>".mysqli_error($connection);
+
+
+
+// //Check to see if our countdown session
+// //variable has been initialized.
+// if(!isset($_SESSION['countdown'])){
+//     //Set the countdown to 120 seconds.
+//     $_SESSION['countdown'] = 120;
+//     //Store the timestamp of when the countdown began.
+//     $_SESSION['time_started'] = time();
 // }
 
+// //Get the current timestamp.
+// $now = time();
 
-//Check to see if our countdown session
-//variable has been initialized.
-if(!isset($_SESSION['countdown'])){
-    //Set the countdown to 120 seconds.
-    $_SESSION['countdown'] = 120;
-    //Store the timestamp of when the countdown began.
-    $_SESSION['time_started'] = time();
-}
+// //Calculate how many seconds have passed since
+// //the countdown began.
+// $timeSince = $now - $_SESSION['time_started'];
 
-//Get the current timestamp.
-$now = time();
+// //How many seconds are remaining?
+// $remainingSeconds = abs($_SESSION['countdown'] - $timeSince);
 
-//Calculate how many seconds have passed since
-//the countdown began.
-$timeSince = $now - $_SESSION['time_started'];
+// //Print out the countdown.
+// // echo "There are $remainingSeconds seconds remaining.";
 
-//How many seconds are remaining?
-$remainingSeconds = abs($_SESSION['countdown'] - $timeSince);
-
-//Print out the countdown.
-// echo "There are $remainingSeconds seconds remaining.";
-
-//Check if the countdown has finished.
-if($remainingSeconds < 1){
-   //Finished! Do something.
-//    echo "<h1> It is done</h1>";
-}
+// //Check if the countdown has finished.
+// if($remainingSeconds < 1){
+//    //Finished! Do something.
+// //    echo "<h1> It is done</h1>";
+// }
 
 
 ?>

@@ -17,18 +17,18 @@ function inactivityTime() {
 
     function resetTime() {
         clearTimeout(time);
-        time = setTimeout(alertUser, 1000 * 10); // 10 seconds
+        time = setTimeout(alertUser, 1000 * 600); // 600 seconds
     }
 
 };
 
 // run the function
-// inactivityTime(); 
+inactivityTime(); 
 
 function destroy_session(){
     // var xmlhttp = getXmlHttp();
     var xmlhttp = new XMLHttpRequest();
-    // xmlhttp.open('GET','../back-end/destroy.php', true);
+    xmlhttp.open('GET','../back-end/destroy.php', true);
 
     xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState == 4){

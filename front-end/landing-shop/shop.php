@@ -1,3 +1,6 @@
+<?php  session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +36,7 @@
 
 
         <div class="flex-class links">
-            <a href="landing.html">Home</a>
+            <a href="landing.php">Home</a>
             <p style="color: black;" class="flex-class filter">Filter <img src="../../icons/arrow.svg" alt="down" class="arrow-down">
                 <form style="color: black;" action="#" class="form-filter">
                     <h3 style="justify-self: left;" >Condition</h3>
@@ -62,8 +65,18 @@
                 </form>
             </p>
             <a href="contact.html">Contact Us</a>
-            <a href="../login-page/login.html">Log in</a>
-            <a href="../signup-page/signup.html" class="sign-up-btn">Sign up</a>
+           
+            <?php
+          if(!isset($_SESSION['username'])){
+           echo "<a href='../login-page/login.html'>Log in</a>";
+            echo "<a href='../signup-page/signup.html' class='sign-up-btn'>Sign up</a>";
+          }
+          else{
+            echo "<p class='sign-up-btn'> Hi ".$_SESSION['username']. "</p>";
+          }
+
+          ?>
+
         </div>
     </nav>
 

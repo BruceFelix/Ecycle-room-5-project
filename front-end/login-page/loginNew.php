@@ -27,7 +27,7 @@ BruceFelix Macharia CIT-223-015/2018 -->
    <?php 
 
 $noUser = "<h1 style= 'color:red; text-transform: uppercase'>User not registered</h1> <br> ";
-$endOfAttempts = "<div style = 'color:red'> <strong>You can only make 3 attempts at a login. <br> Please wait 10 mins before trying again. </strong></div>";
+$endOfAttempts = "<div style = 'color:red'> <strong>You can only make 3 attempts at a login. <br> Please contact your website admin. </strong></div>";
 $checkPassword = "<div style = 'color:red'> <strong>Check Your password </strong></div>";
 
         if($_SESSION['errorNumber'] == 1){
@@ -39,6 +39,7 @@ $checkPassword = "<div style = 'color:red'> <strong>Check Your password </strong
         else if($_SESSION['errorNumber'] == 3){
             echo $noUser;
         }
+        
     ?>
    </div>
  
