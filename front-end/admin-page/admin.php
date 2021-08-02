@@ -49,11 +49,16 @@
             <a href='../signup-page/signup.html' class='sign-up-btn'>Sign up</a></div>";
           }
           else{
-            echo "<p class='sign-up-btn'>Welcome ".$_SESSION['username']. "</p>";
-            echo "
-            <form action='../../back-end/destroy.php' method='post' class='logout-Form'>
-        <input type='submit' value='Log out' id='log-out-btn'>
-         </form>";
+              if($_SESSION['username'] != 'admin'){
+                  header('location:../login-page/login.html');
+              }
+              else{
+                    echo "<p class='sign-up-btn'>Welcome ".$_SESSION['username']. "</p>";
+                    echo "
+                    <form action='../../back-end/destroy.php' method='post' class='logout-Form'>
+                        <input type='submit' value='Log out' id='log-out-btn'>
+                    </form>";
+              }
           }
 
           ?>

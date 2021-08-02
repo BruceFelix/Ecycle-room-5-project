@@ -28,6 +28,7 @@
       <div class="flex-class links">
           <a href="shop.php">Shop</a>
           <a href="contact.html">Contact Us</a>
+          <a href="../login-page/editDetails.php">Edit Profile</a>
           
           <?php
           if(!isset($_SESSION['username'])){
