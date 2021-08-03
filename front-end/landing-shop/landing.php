@@ -27,22 +27,28 @@
 
       <div class="flex-class links">
           <a href="shop.php">Shop</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="../login-page/editDetails.php">Edit Profile</a>
+          <a href="contact.php">Contact Us</a>
+         
           
           <?php
           if(!isset($_SESSION['username'])){
+            //code to run when no user is logged in
            echo "<a href='../login-page/login.html'>Log in</a>";
             echo "<div class='sign-holder'>
-            <a href='../signup-page/signup.html' class='sign-up-btn'>Sign up</a>
+            <a href='../signup-page/signup.html' class='sign-up-btn'>
+              Sign up
+            </a>
             <p class='hoverText'>
               15% off on first order!!
             </p>
           </div>";
           }
           else{
+            //when a user is logged in
             echo "<p class='sign-up-btn'> Hi ".$_SESSION['username']. "</p>";
             echo "
+          <a href='../login-page/editDetails.php'>Edit Profile</a>
+
             <form action='../../back-end/destroy.php' method='post' class='logout-Form'>
                 <input type='submit' value='Log out' id='log-out-btn'>
             </form>";
@@ -59,9 +65,13 @@
       <div class="circle">
 
         <script type="text/javascript">
+
+        //for changing the image
             function imgslider(anything){
               document.querySelector('.bike').src= anything;
             }
+
+            //for changing color
             function changeCircleColor(color){
               const circle=document.querySelector('.circle');
               circle.style.background= color;
@@ -141,7 +151,7 @@
       <ul>
           <li><a href="#">Home</a></li>
           <li><a href="../login-page/login.html">Log in</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.php">Contact Us</a></li>
           <li><a href="#search">Search</a></li>
       </ul>
   </div>

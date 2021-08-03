@@ -9,8 +9,9 @@
     <title>eCycle |Contact page</title>
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="../../styles/shop.css">
+    <!-- <link rel="stylesheet" href="../../styles/landing.css"> -->
 
+    <link rel="stylesheet" href="../../styles/shop.css">
     <link rel="stylesheet" href="../../styles/contact.css">
     <link rel="shortcut icon" href="../../icons/logo.PNG" type="image/x-icon">
 

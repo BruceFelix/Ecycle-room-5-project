@@ -1,3 +1,4 @@
+/* Getting font from google fonts  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
@@ -13,7 +14,6 @@
 }
 body{
     background:white;
-
     position: relative;
     display: block;
     margin: 0;
@@ -220,16 +220,18 @@ nav{
     width: 24px;
     height: 24px;
 }
+
+/* footer section  */
 footer{
     background-image: url(../icons/wave\ darkBlue\ svg\ 1.svg);
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
     display: flex;
-    min-height: 300px;
+    min-height: 320px;
     align-items: center;
     justify-content: space-around;
-    color: wheat;
+    color: white;
     margin-top: 50px;
     flex-wrap: wrap;
     padding: 2rem 0.3rem;
@@ -285,7 +287,7 @@ footer li a:hover {
     position: absolute;
     top: 45px;
     backdrop-filter: blur(4px);
-    background:#3de74391;
+    background: #16dd1dfb;
     width: 300px;
     display: none;
 }
