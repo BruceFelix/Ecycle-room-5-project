@@ -215,3 +215,25 @@
         width: 100%;
     }
 }
+
+.hoverText{
+    position: absolute;
+    z-index: 3;
+  
+    display: none;
+    width: 120px;
+  background: #000000de;
+  padding: 5px;
+  color: white;
+  /* right: 0px; */
+  border-radius: 4px;
+  text-align: center;
+  top: 91%;
+  right: 0;
+  }
+  .sign-holder{
+    position: relative;
+  }
+  .sign-holder:hover .hoverText{
+    display: block;
+  }

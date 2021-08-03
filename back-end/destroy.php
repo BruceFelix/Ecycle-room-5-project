@@ -17,7 +17,7 @@
     }
 
     
-    echo $_SESSION['username'];
+    // echo $_SESSION['username'];
     unset($_SESSION['username']);
     session_destroy();
 

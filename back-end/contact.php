@@ -16,6 +16,6 @@ if($email!=NULL){
 }
 
 //redirect user to contact page
-header("location:../front-end/landing-shop/contact.html");
+header("location:../front-end/landing-shop/contact.php");
 
 ?>

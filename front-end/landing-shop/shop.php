@@ -89,6 +89,8 @@
     <!-- swiperjs effect  -->
     <section class="swiper-container welcome-slider">
         <div class="swiper-wrapper">
+
+                <!-- slide 1 -->
                 <div class="swiper-slide">
                   <article class="flex-class first-slide ">
 
@@ -97,17 +99,20 @@
                       <div class="slide-text">
                           <h2>
                               Twin turbo <br>
-                              21 gears <br>
+                              10- gears <br>
                               Electric rechargable motor
                           </h2>
 
                           <button class="buy-btn">
-                              Buy now!!
-                          </button>
+                    <a href="#">
+                    Buy now!!
+                    </a>
+                    </button>
                       </div>
                   </article>
                 </div>
 
+                <!-- slide 2 -->
                 <div class="swiper-slide">
                   <article class="flex-class first-slide">
 
@@ -116,13 +121,15 @@
                   <div class="slide-text">
                       <h2>
                           Bi-turbo <br>
-                          21 gears <br>
+                          10 gears <br>
 
                       </h2>
 
                       <button class="buy-btn">
-                          Buy now!!
-                      </button>
+                    <a href="#">
+                    Buy now!!
+                    </a>
+                    </button>
                   </div>
               </article>
                 </div>
@@ -152,7 +159,7 @@
             </div>
 
             <div class="prod-card">
-                <img class="product-img" src="../../images/ebike2-removebg-preview.png" alt="">
+                <img class="product-img" src="../../images/bike3.png" alt="">
                 <p class="prod-title" >Grande Electric bike</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
@@ -173,7 +180,7 @@
                </div>
             </div>
             <div class="prod-card">
-                <img class="product-img" src="../../images/ebike2-removebg-preview.png" alt="">
+                <img class="product-img" src="../../images/bike3.png" alt="">
                 <p class="prod-title" >Grande Electric bike</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
@@ -193,7 +200,7 @@
                </div>
             </div>
             <div class="prod-card">
-                <img class="product-img" src="../../images/ebike2-removebg-preview.png" alt="">
+                <img class="product-img" src="../../images/bike2-removebg.png" alt="">
                 <p class="prod-title" >Grande Electric bike</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
@@ -213,7 +220,7 @@
                </div>
             </div>
             <div class="prod-card">
-                <img class="product-img" src="../../images/ebike2-removebg-preview.png" alt="">
+                <img class="product-img" src="../../images/bike4-removebg.png" alt="">
                 <p class="prod-title" >Grande Electric bike</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/dollar-sign-bag-svgrepo-com.svg" alt=""> Kshs 20000</p>
                 <p class="flex-p" > <img class="icon" src="../../icons/bike-svgrepo-com.svg" alt=""> Mini Velo</p>
@@ -235,9 +242,9 @@
             <div class="footer-links">
                 <h2>Useful links</h2>
                 <ul>
-                    <li><a href="landing.html">Home</a></li>
+                    <li><a href="landing.php">Home</a></li>
                     <li><a href="../login-page/login.html">Log in</a></li>
-                    <li><a href="../landing-shop/contact.html">Contact Us</a></li>
+                    <li><a href="../landing-shop/contact.php">Contact Us</a></li>
                     <li><a href="#search">Search</a></li>
                 </ul>
             </div>
