@@ -83,7 +83,7 @@
           <h2 class="company-title">E-Cycle</h2>
           <p>Enjoy a variety of electric bicycles that comes in different sizes and variety.
           The Bike Shop has a service department, that offers standard servicing + repairs, fitting of accessories + spare parts. </p>
-          <a href="shop.html">SHOP</a>
+          <a href="shop.php">SHOP</a>
         </div>
           <div class="imgBox">
             <img src="../../images/bike3.png" class="bike">
